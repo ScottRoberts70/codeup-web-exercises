@@ -14,7 +14,6 @@
 function sayHello(name) {
     return "Hello " + name;
 }
-    console.log(sayHello("codeup"));
 
 /**
  * TODO:
@@ -62,7 +61,7 @@ var random = Math.floor((Math.random() * 3) + 1);
 
 //Solution to ToDo 1.3
 function isTwo (number) {
-    return number == 2;
+    return number === 2;
 }
 console.log(isTwo(random));
 
@@ -93,6 +92,8 @@ let bill = parseFloat(prompt("Please enter the bill amount!"));
 let tipPercent = parseFloat(prompt("Please enter the percentage of tip!"));
 alert("Your tip amount is $" + calculateTip(bill, tipPercent));
 
+//instructor example
+alert(calculateTip(prompt("enter message here"), prompt("message here?")));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -109,7 +110,7 @@ alert("Your tip amount is $" + calculateTip(bill, tipPercent));
  */
 //Solution to ToDo 1.6
 function applyDiscount(originalPrice,discountPercent) {
-    return originalPrice - (originalPrice*discountPercent);
+    return (originalPrice - (originalPrice*discountPercent));
 }
 
 })();
