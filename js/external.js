@@ -16,7 +16,7 @@ alert('Welcome to my Website!');
 
 //Fav Color Exercise!
 let favColor = prompt("What is your favorite color?");
-alert ("Great, " + favColor + "is my favorite color too!");
+alert ("Great, " + favColor + " is my favorite color too!");
 
 //Exercise 3.1
 let littleMermaid = parseInt(prompt("How long do you wish to rent Little Mermaid?"));
