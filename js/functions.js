@@ -1,4 +1,5 @@
 "use strict";
+(function(){
 
 /**
  * TODO:
@@ -8,10 +9,12 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+
+//Solution to ToDo 1.0
 function sayHello(name) {
-    alert ("Hello, codeup!");
+    return "Hello " + name;
 }
-sayHello();
+    console.log(sayHello("codeup"));
 
 /**
  * TODO:
@@ -20,8 +23,9 @@ sayHello();
  *
  * console.log 'helloMessage' to check your work
  */
-
-let helloMessage = sayHello(name);
+//Solution to ToDo 1.1
+let helloMessage = sayHello("Scott");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -29,6 +33,10 @@ let helloMessage = sayHello(name);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+//Solution to ToDo 1.2
+let myName = "Scott";
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -52,6 +60,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+//Solution to ToDo 1.3
+function isTwo (number) {
+    return number == 2;
+}
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -63,6 +77,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+//Solution to ToDo 1.4
+function calculateTip (bill, tipPercent) {
+  return bill * tipPercent;
+}
 
 /**
  * TODO:
@@ -70,6 +88,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+//Solution to ToDo 1.5
+let bill = parseFloat(prompt("Please enter the bill amount!"));
+let tipPercent = parseFloat(prompt("Please enter the percentage of tip!"));
+alert("Your tip amount is $" + calculateTip(bill, tipPercent));
 
 /**
  * TODO:
@@ -85,3 +107,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+//Solution to ToDo 1.6
+function applyDiscount(originalPrice,discountPercent) {
+    return originalPrice - (originalPrice*discountPercent);
+}
+
+})();
