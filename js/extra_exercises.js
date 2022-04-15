@@ -1,14 +1,14 @@
 "use strict";
 (function(){
-
-/*Counting the Number of Characters
+/*
+Counting the Number of Characters
 Create a program that prompts for an input string and displays output that shows the input string and the number of characters the string contains.
 Example Output
 What is the input string? Homer
 Homer has 5 characters.
 Constraints
 Be sure the output contains the original string.
-If the user enters nothing, state that the user must enter something in the program*/
+If the user enters nothing, state that the user must enter something in the program
 
 //Basic concatenation of the users prompt answers!
 
@@ -31,11 +31,13 @@ If your language supports string interpolation or string substitution, use it to
 
 // More concatenation joining users response for an output!
 
+/*
 let noun = prompt("Please enter a noun and press OK i.e book, Betty, Ohio, Cat!");
 let verb = prompt("Please enter a verb and press OK i.e dance, slide, jump.");
 let adjective = prompt("Please enter a adjective and press OK i.e red, quick, happy, and obnoxious");
 let adverb = prompt("Please enter a adverb and press OK i.e quickly, slowly, dimly. Usually and in LY");
 alert("Your MadLib is: Do you " + verb + " your " + adjective + " " + noun + " " + adverb + " ?");
+*/
 
 //Extra Function Todo Drills:
 
@@ -63,14 +65,50 @@ alert("Your MadLib is: Do you " + verb + " your " + adjective + " " + noun + " "
  }
 
  // Make a function named addFive(input) that adds five to some input.
+ function addFive(input){
+  return input + 5;
+ }
+
  // Make a function named isMultipleOfFive(input)
+ function isMultipleOfFive(input) {
+  return (input % 5) == 0;
+ }
+
  // Make a function named isThree(input)
+ function isThree(input){
+  return (input === 3);
+ }
+
  // Make a function named isMultipleOfThree(input)
+
+ function isMultipleOfThree(input) {
+  return (input % 3) == 0;
+ }
  // Make a function named isMultipleOfThreeAndFive(input)
+
+ function isMultipleOfThreeAndFive(input) {
+  return (input % 3 && 5) == 0;
+ }
+
  // Make a function named isMultipleOf(target, n) which checks if target is evenly divisible by n
+
+ function isMultipleOf(target, n) {
+  return (target % n) ==0;
+ }
+
  // Make a function named isTrue(boolean)
+ function isTrue(booLean) {
+  return (4 % 2) ==0;
+ }
+
  // Make a function named isFalse(boolean)
+
+ function isFalse(booLean) {
+  return (5 % 2) ==0;
+ }
+
  // Make a function named isTruthy(input), remember that values other than true will behave like true
+
  // Make a function named isFalsy(input), remember that values other than false behave like false
  // Make a function named isVowel(letter)
  // Make a function named isConsonant(letter)
