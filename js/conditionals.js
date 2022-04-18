@@ -167,14 +167,16 @@ alert ("This is your lucky number " +luckyNumber+ " and you original total is " 
  */
 
 let userConfirm = confirm("Click OK if you want to enter a number!");
-
-
+let text = "";
 if (userConfirm == true){
         let userNum = prompt("Please enter a number!");
         if (typeof userNum =='number' || !isNaN(userNum)){
             userNum = parseFloat(userNum);
-            if(userNum % 2 ==0){
+            if(userNum % 2 == 0){
                 alert ("Your " +userNum+ " is even!");
+                //could use variable name and +=  i.g ;let text = '';
+                //then inst6ead of alerts use text +=
+                // and use alert(text);
             }else {
                 alert ("Your " +userNum+ " is odd!");
             }
