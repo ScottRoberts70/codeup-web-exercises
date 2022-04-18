@@ -109,16 +109,49 @@ alert("Your MadLib is: Do you " + verb + " your " + adjective + " " + noun + " "
 
  // Make a function named isTruthy(input), remember that values other than true will behave like true
 
+ function isTruthy(input){
+  return (input === true);
+ }
+
  // Make a function named isFalsy(input), remember that values other than false behave like false
+
+ function isFalsy(input){
+  return (input === false);
+ }
+
  // Make a function named isVowel(letter)
 
-
-
+function isVowel(letter){
+  return ("aeiou".includes(letter.toLowerCase()));
+}
  // Make a function named isConsonant(letter)
+
+
  // Make a function named isCapital(letter)
+ function isCapital (letter){
+  return (letter == letter.toUpperCase());
+ }
+
  // Make a function named isLowerCase(letter)
+ function isLowercase (letter){
+  return (letter == letter.toLowerCase());
+ }
  // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+ function hasLowerCase(string) {
+  for(let i=0; i < string.length; i++){
+   let isLower = false;
+   isLower = (string[i] == string[i].toLowerCase());
+   if(isLower){
+    break;
+   }
+  }
+ }
+console.log(hasLowerCase("HeLP"));
  // Make a function named isSpace(letter) that returns if a character is a space character
+ function isSpace(letter){
+  return letter === letter.trim()
+ }
+
  // Make a function named isZero(number)
  // Make a function named notZero(input) that returns true if the input is not zero
  // Write a function named lowerCase(string)
