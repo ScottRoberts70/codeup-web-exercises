@@ -96,9 +96,9 @@ alert("Your MadLib is: Do you " + verb + " your " + adjective + " " + noun + " "
   return (target % n) ==0;
  }
 
- // Make a function named isTrue(boolean)
- function isTrue(booLean) {
-  return (4 % 2) ==0;
+ // Make a function named isTrue(boolean) value has to be true and type boolean
+ function isTrue(input) {
+  return (input === true);
  }
 
  // Make a function named isFalse(boolean)
@@ -111,6 +111,9 @@ alert("Your MadLib is: Do you " + verb + " your " + adjective + " " + noun + " "
 
  // Make a function named isFalsy(input), remember that values other than false behave like false
  // Make a function named isVowel(letter)
+
+
+
  // Make a function named isConsonant(letter)
  // Make a function named isCapital(letter)
  // Make a function named isLowerCase(letter)
