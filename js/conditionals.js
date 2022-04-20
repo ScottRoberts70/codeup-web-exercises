@@ -115,8 +115,6 @@ let colorEntered = prompt("Please enter a color!").toLowerCase().trim();
  */
 function calculateTotal (luckyNumber, total) {
     switch (luckyNumber){
-        case 0:
-            return total;
         case 1:
             return total - (total * .10);
         case 2:
@@ -127,6 +125,8 @@ function calculateTotal (luckyNumber, total) {
             return total - (total * .50);
         case 5:
             return 0;
+        default:
+            return total;
     }
 }
 console.log(calculateTotal(2, 100).toFixed());
@@ -143,9 +143,9 @@ console.log(calculateTotal(2, 100).toFixed());
 // Generate a random number between 0 and 6
 let luckyNumber = Math.floor(Math.random() * 6);
 
-let userTotalBill = prompt("Please enter your bill: ");
+let userTotalBill = parseFloat(prompt("Please enter your bill: "));
 
-alert ("This is your lucky number " +luckyNumber+ " and you original total is " +userTotalBill+ " and your price after discount is " + calculateTotal(luckyNumber, userTotalBill));
+alert ("This is your lucky number " +luckyNumber+ " and you original total is " +userTotalBill.toFixed(2)+ " and your price after discount is " + calculateTotal(luckyNumber, userTotalBill.toFixed));
 
 /**
  * TODO:
@@ -170,7 +170,7 @@ let userConfirm = confirm("Click OK if you want to enter a number!");
 let text = "";
 if (userConfirm == true){
         let userNum = prompt("Please enter a number!");
-        if (typeof userNum =='number' || !isNaN(userNum)){
+        if (typeof userNum =='number' || !isNaN(parseFloat(userNum))){
             userNum = parseFloat(userNum);
             if(userNum % 2 == 0){
                 alert ("Your " +userNum+ " is even!");

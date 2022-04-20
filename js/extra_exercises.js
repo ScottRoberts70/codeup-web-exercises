@@ -153,18 +153,67 @@ console.log(hasLowerCase("HeLP"));
  }
 
  // Make a function named isZero(number)
+ function isZero (input){
+  return input === 0;
+ }
+
  // Make a function named notZero(input) that returns true if the input is not zero
+
+ function notZero(input){
+  return input !== 0;
+ }
  // Write a function named lowerCase(string)
+ function lowerCase(string) {
+  return string.toLowerCase();
+ }
  // Write a function named double(n) that returns a number times two
+
+ function double(n){
+  return n * 2;
+ }
  // Write a function named triple(n) that returns a number times 3
+
+ function triple(n){
+  return n *3;
+ }
  // Write a function named quadruple(n) that returns a number times 4
+
+ function quadruple(n){
+  return n * 4;
+ }
  // Write a function named half(n) that returns 1/2 of the provided input
+
+ function half(n){
+  return n / 2;
+ }
  // Write a function named subtract(a, b) that returns a minus b
+ function subtract(a, b){
+  return a - b;
+ }
+
  // Write a function named multiply(a, b) that returns the product of a times b
+ function multiply(a, b){
+  return a * b;
+ }
+
  // Write a function named divide(a, b) that returns a divided by b
+ function divide(a, b){
+  return a / b;
+ }
+
  // Write a function named remainder(a, b) that returns the remainder after dividing a by b
+ function remainder(a, b){
+  return a % b;
+ }
+
  // Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
+
+
  // Write a function named cube(n) that returns n * n * n
+ function cube(n){
+  return n * n * n;
+ }
+
  // Write a function named squareRoot(n) that returns the square root of the input
  // Write a function named cubeRoot(n) that returns the cube root of the input
  // Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
