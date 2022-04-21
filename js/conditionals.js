@@ -176,7 +176,7 @@ if (userConfirm == true){
                 alert ("Your " +userNum+ " is even!");
                 //could use variable name and +=  i.g ;let text = '';
                 //then inst6ead of alerts use text +=
-                // and use alert(text);
+      666          // and use alert(text);
             }else {
                 alert ("Your " +userNum+ " is odd!");
             }
