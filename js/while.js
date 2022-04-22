@@ -6,7 +6,19 @@ while (startHere <= stopHere){
     console.log(startHere);
     startHere *= 2;  // after console.log produces the startHere number of 2 the loop goes again but adds the *= function to the returned number.
 }
-//
+//also : function letsMultiplyAlot (){
+//             let x = 1;
+//             while (x < 65536){
+//                 x*=2;
+//                 console.log(x);
+//             }
+
+// let i = 2;
+// while (i < 65537) {
+//     console.log(i);
+//     i+=i;
+// }
+
 
 let coneStock = Math.floor(Math.random() * 51) + 50;
 let noCones = coneStock === 0;
