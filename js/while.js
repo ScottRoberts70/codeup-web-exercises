@@ -28,5 +28,3 @@ console.log("Yay! I sold them all!");
 
 
 
-
-
