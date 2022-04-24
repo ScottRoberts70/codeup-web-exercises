@@ -9,7 +9,7 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-    planetsArray = planetsString.split(',');
+    planetsArray = planetsString.split("|");
     console.log(planetsArray);
 
     /**
@@ -17,7 +17,7 @@
      * Create a string with <br> tags between each planet. console.log() your
      * results. Why might this be useful?**/
 
-    let planetsStr = planetsArray.join("<br/>");
+    let planetsStr = planetsArray.join("<br>");
     console.log(planetsStr);
 
 
@@ -27,6 +27,12 @@
      * string, and <li> tags around each planet.
      */
 
+ let ulPlanets= "<ul>";
+ for (let i = 0; i < planetsArray.length; i++) {
+     ulPlanets += "<li>" + planetsArray[i] + "</li>";
+ }
+  ulPlanets += "</ul>";
+ console.log(ulPlanets);
 
 
 
