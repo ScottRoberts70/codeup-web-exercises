@@ -49,18 +49,16 @@ function replaceLettersWithZ(str) {
     let text = '';
     let i = 0;
     for (i = 0; i < str.length; i++) {
-
         if (i % 2 == 1) {
             text = text + "Z";
         } else {
             text = text + str[i];
         }
-
     }
     return text;
 }
 console.log(replaceLettersWithZ(
-    'Scott'));
+    'Javascirpt'));
 
 
 //todo Create a function to display a message of the factorial of a number. (example: factorial(4) // returns “1 * 2 * 3 * 4 = 24";)
