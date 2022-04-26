@@ -33,19 +33,19 @@ function analyzeColor(color) {
 }
  console.log(analyzeColor(color));
 // //
-// // function sandwichPreference(str){
-// //     switch(str){
-// //         case "olive loaf":
-// //             return "Congratulations on your bold choice!"
-// //         case "brisket":
-// //             return "Congratulations on the correct choice!"
-// //         default:
-// //             return "Not huge on " + str + ", but hey whatever makes you happy!";
-// //     }
-// // }
-// //
-// // alert(sandwichPreference(prompt("Hey what the..").toLowerCase().trim()));
-//
+function sandwichPreference(str){
+    switch(str){
+        case "olive loaf":
+            return "Congratulations on your bold choice!"
+        case "brisket":
+            return "Congratulations on the correct choice!"
+        default:
+            return "Not huge on " + str + ", but hey whatever makes you happy!";
+    }
+}
+
+alert(sandwichPreference(prompt("Hey what the..").toLowerCase().trim()));
+
 //
 // // Don't change the next two lines!
 // // These lines create two variables for you:

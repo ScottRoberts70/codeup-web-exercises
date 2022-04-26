@@ -11,14 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-let person = {
-    firstName: "Scott",
+    let person = {
+        firstName: "Scott",
         lastName: "Roberts"
     }
-
-    // console.log(person.firstName)
-    // console.log(person.firstName)
-
+    console.log(person.firstName)
+    console.log(person.firstName)
 
     /**
      * TODO:
@@ -29,10 +27,10 @@ let person = {
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
- person.sayHello = function(){
-     return "Hello from " + person.firstName + " " + person.lastName;
+    person.sayHello = function () {
+        return "Hello from " + person.firstName + " " + person.lastName;
     }
-//console.log(person.sayHello())
+console.log(person.sayHello());
 
 
     /** TODO:
@@ -55,12 +53,15 @@ let person = {
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+
     function shopDiscount(arry) {
         let thisStr = "";
         for (let i = 0; i < arry.length; i++) {
             thisStr += "Shopper " + arry[i].name + " spent " + arry[i].amount + ". The discounted price is " + discountPrice(arry[i].amount) + '\n';
-        }return thisStr;
+        }
+        return thisStr;
     }
+
     function discountPrice(total) {
         if (total > 200) {
             return total - (total * .12);
@@ -68,6 +69,7 @@ let person = {
             return total;
         }
     }
+
     console.log(shopDiscount(shoppers));
 
     /** TODO:
@@ -82,28 +84,37 @@ let person = {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-let books = [
-        {title: 'My Life',
+    let books = [
+        {
+            title: 'My Life',
             author: {
                 firstName: 'James',
-                lastName: 'Franklin'},
+                lastName: 'Franklin'
+            },
         },
-        {title: 'The Ending',
+        {
+            title: 'The Ending',
             author: {
                 firstName: 'Rich',
-                lastName: 'McDaniel'},
+                lastName: 'McDaniel'
+            },
         },
-        {title: 'The Hunter',
+        {
+            title: 'The Hunter',
             author: {
                 firstName: 'Mike',
-                lastName: 'Joy'},
+                lastName: 'Joy'
+            },
         },
-        {title: 'Jabba',
+        {
+            title: 'Jabba',
             author: {
                 firstName: 'Leslie',
-                lastName: 'Craig'},
+                lastName: 'Craig'
+            },
         },
-        {title: 'My Dog',
+        {
+            title: 'My Dog',
             author: {
                 firstName: 'Ralph',
                 lastName: 'Pug'
@@ -138,6 +149,7 @@ let books = [
      *      ---
      *      ...
      */
+    //can be   books.forEach(function(book,index){
         for (let i = 0; i < books.length; i++) {
             console.log("Book: # " + (i + 1) + "\n");
             console.log("Title: " + books[i].title);
@@ -150,7 +162,7 @@ let books = [
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
+     * - Create a function named `showBookInfo` tha\ accepts a book object and
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
