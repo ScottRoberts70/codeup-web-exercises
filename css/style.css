@@ -1,3 +1,78 @@
 .fancy-header {
-    color: purple;
+    text-align: center;
+    color: darkolivegreen;
+    text-shadow: 2px 2px black;
+}
+
+a:link {
+    color:darkblue;
+}
+
+a:visited {
+    color: darkblue;
+}
+
+a:hover {
+    color:darkred;
+}
+
+a:active {
+    color:green;
+}
+
+ #container {
+    font-family: 'Goldman', cursive;
+    font-size: 16px;
+    font-palette: normal;
+     color: black;
+}
+
+p {
+    text-align: center;
+    font-family: "Arial", Times, serif;
+}
+
+h3 {
+    color: darkgoldenrod;
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
+}
+
+h2{
+    color: darkgoldenrod;
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-image:url("/img/whiteback.jpg");
+    background-color: bisque;
+}
+
+#midpicr1, #midpicr2 {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    list-style: square;
+}
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, tr {
+    border-color: dimgray ;
+    border-style: solid;
+    padding-block: initial;
+}
+
+th {
+    background-color: gray;
+}
+
+footer {
+    text-align: center;
 }
