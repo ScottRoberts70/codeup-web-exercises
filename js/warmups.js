@@ -40,3 +40,13 @@ for (let i = 0; i < 101; i++) {
 //         }
 //     }
 // } fizzBuzz();
+
+function allFirstLetters(arr){
+    let bucket = "";
+    for (let el of arr){
+        bucket += el.substring(0,1);
+    }
+    return bucket
+}
+const testStrings = ['dog', 'cat', 'frog', 'bat'];
+console.log(allFirstLetters(testStrings));
