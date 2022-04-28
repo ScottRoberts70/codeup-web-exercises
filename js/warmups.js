@@ -12,16 +12,16 @@
 
 //ToDO For Loop:
 
-for (let i = 0; i < 101; i++) {
-    if (i % 15 == 0) {         //or (i % 3 === 0 && i % 5 === 0)
-        console.log("Fizzbuzz")
-
-    } else if (i % 5 == 0) {
-        console.log("Buzz");
-    } else if (i % 3 == 0) {
-        console.log("Fizz");
-    } else console.log(i);
-}
+// for (let i = 0; i < 101; i++) {
+//     if (i % 15 == 0) {         //or (i % 3 === 0 && i % 5 === 0)
+//         console.log("Fizzbuzz")
+//
+//     } else if (i % 5 == 0) {
+//         console.log("Buzz");
+//     } else if (i % 3 == 0) {
+//         console.log("Fizz");
+//     } else console.log(i);
+// }
 // TODO This is Chris's example of a switch of FizzBuzz:
 // function fizzBuzz() {
 //     for (let count = 1; count <= 100; count++) {
@@ -41,12 +41,26 @@ for (let i = 0; i < 101; i++) {
 //     }
 // } fizzBuzz();
 
-function allFirstLetters(arr){
-    let bucket = "";
-    for (let el of arr){
-        bucket += el.substring(0,1);
-    }
-    return bucket
+// function allFirstLetters(arr){
+//     let bucket = "";
+//     for (let el of arr){
+//         bucket += el.substring(0,1);
+//     }
+//     return bucket
+// }
+// const testStrings = ['dog', 'cat', 'frog', 'bat'];
+// console.log(allFirstLetters(testStrings));
+
+//Write a function that takes in a string and returns that string in alphabetical order:
+
+function alphaBet(input){
+    let strArray = input.split("");
+    console.log(strArray)
+    let sortedArray = strArray.sort()
+    console.log(sortedArray);
+    return sortedArray.join("");
 }
-const testStrings = ['dog', 'cat', 'frog', 'bat'];
-console.log(allFirstLetters(testStrings));
+// function alphaBet(input){
+// retrun inout.split("").sort().join("");
+
+console.log(alphaBet("codeup"));
