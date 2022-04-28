@@ -71,7 +71,7 @@ fieldset {
     margin: .5em 0em;
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     box-sizing: content-box;
-    width: 100%;
+    width: calc(100% - 4px);
     /* See the example at:http://learnlayout.com/margin-auto.html*/
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
 }

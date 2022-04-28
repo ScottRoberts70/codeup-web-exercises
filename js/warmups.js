@@ -53,14 +53,14 @@
 
 //Write a function that takes in a string and returns that string in alphabetical order:
 
-function alphaBet(input){
-    let strArray = input.split("");
-    console.log(strArray)
-    let sortedArray = strArray.sort()
-    console.log(sortedArray);
-    return sortedArray.join("");
-}
 // function alphaBet(input){
-// retrun inout.split("").sort().join("");
-
+//     let strArray = input.split("");
+//     console.log(strArray)
+//     let sortedArray = strArray.sort()
+//     console.log(sortedArray);
+//     return sortedArray.join("");
+// }
+function alphaBet(input){
+return input.split("").sort().join("");
+}
 console.log(alphaBet("codeup"));
