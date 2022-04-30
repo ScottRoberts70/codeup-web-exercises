@@ -16,21 +16,21 @@ body, html {
 }
 
 .message-info {
-    background-color: #abc7ee;
-    color: #37298f;
+    background-color: #CCDEFF;
+    color: #3E3697;
 }
 
 .message-success {
-    background-color: #90EE9086;
-    color: #216221E8;
+    background-color: #CFF3DA;
+    color: #1B703C;
 }
 
 .message-warning {
-    background-color: lightgoldenrodyellow;
-    color: #946c07;
+    background-color: #FCFBC9;
+    color: #958225;
 }
 
 .message-error {
-    background-color: #FFB6C1B0;
-    color: #9d1e3b;
+    background-color: #FAD2D6;
+    color: #902E43;
 }
