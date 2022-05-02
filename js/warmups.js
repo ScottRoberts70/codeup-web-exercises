@@ -60,7 +60,30 @@
 //     console.log(sortedArray);
 //     return sortedArray.join("");
 // }
-function alphaBet(input){
-return input.split("").sort().join("");
+// function alphaBet(input){
+// return input.split("").sort().join("");
+// }
+// console.log(alphaBet("codeup"));
+
+function arryNum([num1, num2, num3, num4]){
+    return num1 + num2 + num3 +num4;
 }
-console.log(alphaBet("codeup"));
+console.log(arryNum([2, 2, 2, 2]));
+
+function arryName(arr) {
+    let sum = 0;
+    for (let el of arr) {
+        sum += el;
+    }
+    return sum;
+}
+
+console.log(arryName([1, 1, 1, 1]));
+
+const array = [1, 2, 3, 4];
+let sum = 0;
+
+for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+}
+console.log(sum);
