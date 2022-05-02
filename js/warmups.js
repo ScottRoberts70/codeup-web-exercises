@@ -68,7 +68,7 @@
 function arryNum([num1, num2, num3, num4]){
     return num1 + num2 + num3 +num4;
 }
-console.log(arryNum([2, 2, 2, 2]));
+console.log(arryNum([2, 4, 2, 2]));
 
 function arryName(arr) {
     let sum = 0;
