@@ -13,7 +13,7 @@
             let area = (Math.PI)*(Math.pow(int1, int2));
             return area; // TODO: return the proper value
         },
-c
+
         logInfo: function (doRounding) {
             // TODO: complete this method.
 
