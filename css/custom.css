@@ -1,50 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
-.d-flex{
-    display: flex;
-    width: 60%;
-}
-
-.navbar-nav2 {
-    display: flex;
-    list-style: none;
-    justify-items: right;
-    margin-left: 9em;
-}
-
-.form-control{
-    display: flex;
-    width: 40%;
-    margin-left: 0;
-}
-
-.container-lg{
-    position: relative;
-    text-align: center;
-    color: black;
-    font-weight: bold;
+.jumbotron{
     height: 346px;
     background-size: cover;
-}
-
-.centered {
-    background: rgba(251, 252, 255, 0.6);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-}
-
-@media screen and (max-width:576px){
-.navbar-nav2{
-    display: none;
-}
-
-    .container-lg {
-        display: none;
-    }
-
+    background-image: url("../img/pizza.png");
 }
