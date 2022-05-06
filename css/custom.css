@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.d-flex{
+    display: flex;
+    width: 60%;
+}
+
+.navbar-nav2 {
+    display: flex;
+    list-style: none;
+    justify-items: right;
+    margin-left: 9em;
+}
+
+.nav-link{
+    color: black;
+}
+.form-control{
+    display: flex;
+    width: 40%;
+    margin-left: 0;
+}
+
+/*!*.{*!*/
+/*!*    background: url("/img/pizza.png") no-repeat;*!*/
+/*}*/
+
+
+
+@media screen and (max-width:448px){
+.navbar-nav2{
+    display: none;
+}
+    .d-flex{
+        display: none;
+    }
+}

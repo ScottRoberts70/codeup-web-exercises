@@ -16,7 +16,7 @@
         lastName: "Roberts"
     }
     console.log(person.firstName)
-    console.log(person.firstName)
+    console.log(person.lastName)
 
     /**
      * TODO:
@@ -152,7 +152,7 @@ console.log(person.sayHello());
     //can be   books.forEach(function(book,index){
         for (let i = 0; i < books.length; i++) {
             console.log("Book: # " + (i + 1) + "\n");
-            console.log("Title: " + books[i].title);
+            console.log("Title: " + books[i].title + "\n");
             console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
         }
 
