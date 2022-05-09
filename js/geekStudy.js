@@ -1,28 +1,107 @@
 'use strict';
+(function () {
 
-function thisFunction(input){
-   if(typeof input === "string"){
-       console.log(input);
-   }else
-       return false;
+
+    let num = 18;
+    let str = "Hello";
+    let boo = false;
+
+
+    function thiFunc(input) {
+        return typeof input;
+    }
+
+    console.log(thiFunc(num));
+    console.log(thiFunc(str));
+    console.log(thiFunc(boo));
+
+
+    function squreIt(input) {
+        return input * input;
+    }
+
+    function stradd() {
+        return str + prompt(" Enter text here");
+    }
+
+    // console.log(stradd());
+
+
+    function decipher(input) {
+        if (input === true) {
+            return "This is true";
+        } else if (input === false) {
+            return "This is false";
+        }
+    }
+
+
+    function randominput(str){
+        return str.length;
+    }
+
+    console.log(randominput('hello'));
+
+    const arry = [1,2,3,4,5];
+    function arrylength(arry){
+        return arry.length
+    }
+    function parseNumber(input) {
+        if (!isNaN(parseFloat(input))) {
+            return true;
+        } else
+            return false;
+    }
+//-----loop-------//
+        function isArryAllNum(arry) {
+            for (let i = 0; i < arry.length; i++) {
+                if (parseNumber(arry[i]) == false) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+    console.log(isArryAllNum([5,6,'hjghgj']));
+
+//------ARRY-----//
+    const array1 = [1,2,3,4,5]
+
+    function atEnd(input){
+        array1.push(input)
+    }
+
+    atEnd('test');
+    console.log(array1);
+
+ //---Obj -------//
+    const superNumber = {value:5, negPos:'positive', integer:true}
+
+function makeFavorite(obj){
+    obj.favorite = true;
+    superNumber.favorite = true;
 }
-thisFunction("Scott");
+
+    console.log(superNumber);
+    makeFavorite(superNumber);
+    console.log(superNumber);
 
 
-// You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
+    function takeAway(){
+        array1.pop();
+    }
+    takeAway()
+    takeAway()
 
-let littleMermaid = 3;
-let brotherBear = 5;
-let hercules = 1;
-let pricePer = 3;
-let pay = (littleMermaid + brotherBear + hercules)* pricePer;
-console.log(pay);
-
-// A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
-let classFull = true;
-let scheduleConflict = true;
-let enrolled = (classFull && scheduleConflict);
-console.log(enrolled);
+console.log(array1);
 
 
-//A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
+    function shortNumber(obj){
+        return {value:obj.value, negPos: obj.negPos}
+    }
+
+    console.log(shortNumber(superNumber));
+
+
+})();

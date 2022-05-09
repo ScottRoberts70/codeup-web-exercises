@@ -79,14 +79,14 @@
 // }
 //
 // console.log(arryName([1, 1, 1, 1]));
-
-const array = [1, 2, 3, 4];
-let sum = 0;
-
-for (let i = 0; i < array.length; i++) {
-    sum += array[i];
-}
-console.log(sum);
+//
+// const array = [1, 2, 3, 4];
+// let sum = 0;
+//
+// for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+// }
+// console.log(sum);
 
 // // Create a function, returnProductEssentialDetails, that takes in a product object and returns a simpler product object containing only the product name and price in cents.
 //
@@ -158,3 +158,61 @@ console.log(sum);
 // BONUS (if time permits)
 //
 // Create a function, returnAllProductsEssentialDetails, that takes in an array of product objects and returns an array of product objects containing only the essential details of the product name and price in cents.
+
+
+const hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    } , {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    } , {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    } , {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    } , {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14"
+    }
+];
+
+// function tallestObject(id) {
+//     const heightInMM = hamsters.map(object => {
+//         return object.heightInMM;
+//     });
+//     console.log(heightInMM);
+// }
+// const max = Math.max(heightInMM);
+// console.log(max);
+
+//--Loops through array and returns obj with tallest height--// //can use to return the highest or lowest of an objet array also--//
+
+function returnTallest(arr) {
+    let tallest = {heightInMM: 0};
+    for (let hamster of arr) {
+        if (hamster.heightInMM > tallest.heightInMM){
+            tallest = hamster;
+        }
+    }
+    return tallest;
+}
+
+console.log(returnTallest(hamsters));
