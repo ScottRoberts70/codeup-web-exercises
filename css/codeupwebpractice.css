@@ -1,0 +1,26 @@
+.btn-circle.btn-xl {
+    width: 100px;
+    height: 100px;
+    padding: 13px 18px;
+    border-radius: 60px;
+    font-size: 15px;
+    text-align: center;
+}
+
+body{
+    background-color: #F0F0F0;
+}
+
+h1{
+    font-family: 'Anton', sans-serif;
+    margin-top: 1em;
+}
+
+.header2{
+    font-family: 'Anton', sans-serif;
+}
+
+.btn{
+    border: 6px solid white;
+    color: #FFFFFF;
+}
