@@ -194,25 +194,40 @@ const hamsters = [
     }
 ];
 
-// function tallestObject(id) {
-//     const heightInMM = hamsters.map(object => {
-//         return object.heightInMM;
-//     });
-//     console.log(heightInMM);
-// }
-// const max = Math.max(heightInMM);
-// console.log(max);
-
 //--Loops through array and returns obj with tallest height--// //can use to return the highest or lowest of an objet array also--//
 
-function returnTallest(arr) {
-    let tallest = {heightInMM: 0};
-    for (let hamster of arr) {
-        if (hamster.heightInMM > tallest.heightInMM){
-            tallest = hamster;
+// function returnTallest(arr) {
+//     let tallest = {heightInMM: 0};
+//     for (let hamster of arr) {
+//         if (hamster.heightInMM > tallest.heightInMM){
+//             tallest = hamster;
+//         }
+//     }
+//     return tallest;
+// }
+//
+// console.log(returnTallest(hamsters));
+//
+// function mostColorfull(arry){
+//     let colorfull = {fur: 0};
+//     for (let hamster of arry){
+//         if (hamster.fur > colorfull.fur){
+//             colorfull.length = hamster.length;
+//         }
+//     }
+//     return colorfull;
+// }
+//
+// console.log(mostColorfull(hamsters));
+
+function mostColorful(hamsters){
+    let mostColors = hamsters[0];
+    for(let x = 1; x < hamsters.length; x++){
+        if (hamsters[x].fur.length > mostColors.fur.length){
+            mostColors=hamsters[x];
         }
+        return mostColors;
     }
-    return tallest;
 }
 
-console.log(returnTallest(hamsters));
+console.log(mostColorful(hamsters));
