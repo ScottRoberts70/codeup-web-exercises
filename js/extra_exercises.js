@@ -239,9 +239,9 @@
  function invertSign(number) {
   if (number > 0) {
    return -Math.abs(number);
-  }else if (number < 0){
+  } else if (number < 0) {
    return Math.abs(number);
-  }else{
+  } else {
    return false;
   }
  }
@@ -249,12 +249,24 @@
  console.log(invertSign(parseFloat(5)));
 
  // Write a function named degreesToRadians(number)
+ function degreesToRadians(degrees) {
+  let pi = Math.PI;
+  return degrees * (pi / 180);
+ }
 
-
-
+ console.log(degreesToRadians(45));
 
  // Write a function named radiansToDegrees(number)
+ function radiansTodDegrees(radians) {
+  let pi = Math.PI;
+  return radians * (180 / pi);
+ }
+
+ console.log(radiansTodDegrees(0.7853981633974483));
+
  // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+
+
  // Make a function named trim(string) that removes empty spaces before and after the input.
  // Make a function named areEqual(input1, input2) that returns if both inputs have the same value
  // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
@@ -265,7 +277,9 @@
  // Write a function called reverseString(string) that reverses a string
  // Make a function named absoluteValue(number) that returns the absolute value of a number.
  // Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
+function rollDice(sides){
 
+}
 
 
 

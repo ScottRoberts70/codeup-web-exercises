@@ -219,15 +219,38 @@ const hamsters = [
 // }
 //
 // console.log(mostColorfull(hamsters));
+//
+// function mostColorful(hamsters){
+//     let mostColors = hamsters[0];
+//     for(let x = 1; x < hamsters.length; x++){
+//         if (hamsters[x].fur.length > mostColors.fur.length){
+//             mostColors=hamsters[x];
+//         }
+//         return mostColors;
+//     }
+// }
+//
+// console.log(mostColorful(hamsters));
 
-function mostColorful(hamsters){
-    let mostColors = hamsters[0];
-    for(let x = 1; x < hamsters.length; x++){
-        if (hamsters[x].fur.length > mostColors.fur.length){
-            mostColors=hamsters[x];
-        }
-        return mostColors;
+// ??write a function that accepts a string. It should return an object witht he following properties: string, size, containesLettersRstlne and is one word
+
+function makeAnObjectFromString(str){
+    const obj={}
+    obj.string = str;
+    obj.size = str.length;
+    obj.isOneWord = str.indexOf("") < 0;
+    let lc = str.toLowerCase();
+    if(lc.includes("r") || lc.includes("s") || lc.includes("t") || lc.includes("l") || lc.includes("n") || lc.includes("e"));{
+    obj.containsLetterFromRSTLNE = true;
+    }else{
+        obj.containsLetterFromRSTLNE = false;
     }
+    return obj;
 }
+    console.log(makeAnObjectFromString("Kacey Bobby"));
 
-console.log(mostColorful(hamsters));
+
+
+
+
+
