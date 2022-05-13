@@ -57,10 +57,9 @@
             for (let i = 0; i < arry.length; i++) {
                 if (parseNumber(arry[i]) == false) {
                     return false;
-                }
+                }else
+                    return true;
             }
-
-            return true;
         }
 
     console.log(isArryAllNum([5,6,'hjghgj']));
@@ -92,16 +91,33 @@ function makeFavorite(obj){
         array1.pop();
     }
     takeAway()
-    takeAway()
 
 console.log(array1);
 
 
     function shortNumber(obj){
-        return {value:obj.value, negPos: obj.negPos}
+        return {value:obj.value, negPos:obj.negPos}
     }
 
     console.log(shortNumber(superNumber));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })();
