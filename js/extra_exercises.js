@@ -555,10 +555,20 @@ function listOfRolls(num){
     let bucket = []
     for(let i = 0; i<num; i++){
     let rolls = rollDie(i)*num;
-    bucket.push()
+    bucket.push(rolls)
     }
-
-
+    return bucket;
 }
+
+    console.log(listOfRolls(6));
+
+
+//     function showMultiplicationTable(num) {
+//     for (let i = 1; i < 11; i++) {
+//         console.log(+i + " x " + num + " = " + (+ i * num));
+//     }
+// }
+// showMultiplicationTable(2);
+
 
 })();
