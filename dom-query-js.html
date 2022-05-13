@@ -46,14 +46,28 @@
         let listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-
+// I could only figure this out with a loop, tryed other syntax from web without it working//
+        //used the above variable name and looped thru "li's" if the "li" was even I changed it to grey with styles//
+        for (let i=0; i<listItems.length; i++){
+            if (i % 2 == 0) {
+                listItems[i].style.color = "grey";
+            }
+        }
 
         // TODO: Set text color of li with dbid = 1 to blue
+        //same as above but had to use .getAttribute because 1 was a attribute of data-dbid in the "li"  changed style color.//
+        for (let i=0; i<listItems.length; i++){
+            if (listItems[i].getAttribute("data-dbid")== 1) {
+                listItems[i].style.color = "blue";
+            }
+        }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerText = "Mission Accomplished";
+
     })();
 </script>
 </body>
