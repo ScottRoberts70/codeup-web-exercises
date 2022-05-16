@@ -14,6 +14,13 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+
+<button class="btn1" type="button">JS is COOL</button>
+<button class="btn2" type="button">SubHead Blue</button>
+<button class="btn3" type="button">Turn LI Grey</button>
+<button class="btn4" type="button">Mission Accomplished!</button>
+
+
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -33,14 +40,21 @@
 
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-
+document.querySelector(".btn1").addEventListener
+("click", function (){
+    document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
+})
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        // subHeader.style.color = "blue";
+
+        document.querySelector(".btn2").addEventListener
+        ("click", function (){
+            document.getElementById("sub-header").style.color = "blue";
+        })
 
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName("li");
@@ -48,25 +62,42 @@
         // TODO: Set text color on every other list item to grey
 // I could only figure this out with a loop, tryed other syntax from web without it working//
         //used the above variable name and looped thru "li's" if the "li" was even I changed it to grey with styles//
-        for (let i=0; i<listItems.length; i++){
+
+            // for (let i = 0; i < listItems.length; i++) {
+            //     if (i % 2 == 0) {
+            //         listItems[i].style.color = "grey";
+            //     }
+            // }
+
+        document.querySelector(".btn3").addEventListener
+        ("click", function () {
+            for (let i = 0; i < listItems.length; i++) {
             if (i % 2 == 0) {
                 listItems[i].style.color = "grey";
             }
-        }
+                listItems[0].style.color = "blue";
+            }
+        })
+
+
 
         // TODO: Set text color of li with dbid = 1 to blue
         //same as above but had to use .getAttribute because 1 was a attribute of data-dbid in the "li"  changed style color.//
-        for (let i=0; i<listItems.length; i++){
-            if (listItems[i].getAttribute("data-dbid")== 1) {
-                listItems[i].style.color = "blue";
-            }
-        }
+        // for (let i=0; i<listItems.length; i++){
+        //     if (listItems[i].getAttribute("data-dbid")== 1) {
+        //         listItems[i].style.color = "blue";
+        //     }
+        // }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished";
+        // subParagraphs[0].innerText = "Mission Accomplished";
+        document.querySelector(".btn4").addEventListener
+        ("click", function (){
+            document.querySelector(".sub-paragraph").innerHTML = "Mission Accomplished!";
+        })
 
     })();
 </script>
