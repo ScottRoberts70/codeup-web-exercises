@@ -18,15 +18,19 @@
 // $(".codeup").css('border', '1px solid red');
 
 //removed one element and indeed it doesn't have a border//
-//No border on the id, because the other ws a class. Unless I select multiple id's and classes together.//
+
+//No border on the id, because the other was a class. Unless I select multiple id's and classes together.//
 
 // $("li").css("font-size", "20px");
-
+//
 // $('.codeup, .liItem, #paraId').css('background-color', '#FFFF00');
 //
 // $(function(){
 //   let alertHeader = $('h1').html();
 //   alert(alertHeader);
-// })
+//
+//   });
+
+
 
 
