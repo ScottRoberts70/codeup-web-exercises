@@ -81,6 +81,35 @@
     });
 
 
+    let todoInput = document.getElementById("todo");
+    let todoList = document.getElementById("todosList");
+    let todoBtn = document.getElementById("addTodo")
+
+    todoBtn.addEventListener("click", function(){
+        if(todoList.value !== "") {
+            let str = "<li>" + todoInput.value + "</li>"
+            todoList.innerHTML += str;
+            todoInput.value = "";
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
