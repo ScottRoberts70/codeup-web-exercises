@@ -9,14 +9,14 @@
     <ul>
         <h2>Larger Title</h2>
         <h3>Title List</h3>
-        <li class="liItem">First Item</li>
+        <li>First Item</li>
         <li>Second Item</li>
         <li>Third Item</li>
         <li>Fourth Item</li>
     </ul>
 </div>
 <main>
-    <h1 class="codeup">jQuery more like Jake Weary!</h1>
+    <h1>jQuery more like Jake Weary!</h1>
     <p id="paraId">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, corporis debitis delectus est,
         exercitationem
         labore laboriosam nisi officia quaerat ratione repellat temporibus velit, voluptate! Blanditiis dolore esse id
@@ -60,12 +60,24 @@
     //
     // });
 
+$('h1').click(
+    function(){
+        $(this).css('background-color', '#7CB342');
+    });
 
+$('p').dblclick(
+    function(){
+        $(this).css('font-size', '18px');
+    });
 
-
-
-
-
+    $('ul li').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'black');
+        }
+    );
 
 
 </script>
