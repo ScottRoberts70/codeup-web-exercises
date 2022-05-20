@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konami Code</title>
+    <!----------------BOOTSTRAP LINK---------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Creepster|Source+Sans+Pro|Nosifer" rel="stylesheet">
+    <link rel="stylesheet" href="css/kanomiStyle.css">
+</head>
+<body>
+<div class="container h-100">
+    <div class="d-flex text-center align-items-center">
+        <div class="w-100 text-black">
+            <h1 class="display-3" style="font-family: Kanomi, serif">Kanomi Cheat Code!</h1>
+            <p class="mb-0">Enter the correct code and get 30 lives!</p>
+        </div>
+    </div>
+</div>
+<main class="container mx-auto">
+        <div class="row col-12 opacity-75">
+            <img src="img/backgroundK.png">
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--<script src="/js/jquery.js"></script>-->
+    <script>
+        "use strict";
+
+        //----------SET THE CORRECT CODE SEQUENCE TO BE ENTERED INTO AN ARRAY---------//
+        let correctCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]
+        //-----STARTS AT THE FIRST ARRAY ELEMENT----//
+        let currentPosition = 0;
+        //-----SET THE EVENT LISTENER----//
+        $(document).keydown(function (e) {
+            let key = e.keyCode;
+            let correctKey = correctCode[currentPosition];
+            if (key === correctKey) {
+                currentPosition++;
+                //-------CHECK TO SEE IF YOUR AT THE  END OF THE ARRAY----//
+                if (currentPosition === correctCode.length) {
+                    cheatSuccess();
+                    setTimeout(function () {
+                        $('body').css("background-color", 'white');
+                        $('h1').text("Kanomi Cheat Code!");
+                    }, 5000)
+                    currentPosition = 0;
+                }
+            } else {
+                //-----------IF FAIL CHANGE BACK TO ORIGINAL PARAMETERS AFTER DELAY--->
+                cheatFail();
+                setTimeout(function () {
+                    $('body').css("background-color", 'white');
+                    $('h1').text("Kanomi Cheat Code!");
+                    $('img').attr("src", "img/backgroundK.png")
+                }, 5000)
+            }
+        });
+        //-------IF USER ENTERS THE CODE CORRECT------//
+        function cheatSuccess() {
+            $('body').css("background-color", 'green');
+            $('h1').text("YOU HAVE GAINED 30 LIVES...CHEATER!")
+            let audio = new Audio("img/victory.mp3");
+            audio.play();
+        }
+        //-------IF USER ENTERS THE WRONG CODE------//
+        function cheatFail() {
+            $('body').css("background-color", 'red')
+            $('h1').text("YOU HAVE FAILED, TRY AGAIN!");
+            $('img').attr("src", "/img/player.png")
+            let audio = new Audio("img/fail.mp3");
+            audio.play();
+        }
+    </script>
+</main>
+</body>
+</html>
