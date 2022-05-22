@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="#" id="test">Toggle the dd on nd off.</a>
+<dl>
+    <dt>National Parks</dt>
+    <dd>The National Park Service protects over 84 million acres of wild landscapes and historic sites.</dd>
+    <dd>Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national park, founded in 1872.</dd>
+    <dd>The second U.S. national park created is no longer a national park. Mackinac National Park in Michigan was established in 1875 and was returned to the state in 1895. It is now one of Michigan's State Parks. </dd>
+    <dd>Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.</dd>
+    <dd>Ribbon Falls in Yosemite is nine times taller than Niagara Falls.</dd>
+    <dd>One of the hottest temperatures on earth was recorded in 1913 in Death Valley National Park, registering 134 degrees.</dd>
+    <dd>The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
+    <dd>Wrangell-St. Elias National Park, Alaska, is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
+    <dd>Mount McKinley in the Alaska Range of Denali National Park is the highest point in the national parks at 20,302 feet.</dd>
+    <dd>California and Alaska each have eight national parks. </dd>
+</dl>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+    $('#test').click(function(event) {
+        event.preventDefault();
+        $('dd').addClass('invisible');
+    });
+});
+$('.invisible').css('visibility', 'hidden');
+
+$(document).ready(function() {
+    $('#test').click(function(event) {
+        event.preventDefault();
+        $('dd').toggleClass('invisible');
+    });
+});
+
+</script>
+</body>
+</html>
+
+<!--$(document).ready(function(){-->
+<!--$("button").click(function(){-->
+<!--$("p").toggleClass("main");-->
+<!--});-->
+<!--});-->
