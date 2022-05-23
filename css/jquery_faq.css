@@ -1,0 +1,21 @@
+.leftPic {
+    background-image: url("/img/pic_1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px;
+}
+
+.middlePic {
+    background-image: url("/img/pic_2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px;
+}
+
+.rightPic {
+    background-image: url("/img/pic_3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px;
+}
+
