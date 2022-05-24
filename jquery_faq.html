@@ -14,13 +14,16 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/jquery_faq.css">
     <script src="https://kit.fontawesome.com/a0d494409f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <!----------BOOTSTRAP AS WELL AS FONT AWESOME/GOOGLE FONTS------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+<body>
 <main class="container-fluid">
     <header class="d-block text-center mt-3"><h1>National Park Faq</h1></header>
-<body>
 <div>
     <br>
 <a href="#" id="test">Click me to Toggle!</a>
@@ -95,25 +98,66 @@
 </div>
 <br>
 <br>
+    <div>
+        <h1 class="brady text-center">The Brady Bunch</h1>
+    </div>
 <div class="container row justify-content-center mx-auto align-items-center">
-<div class="card mx-auto border border-warning border-5 align-items-center bg-secondary" style="width: 20rem;">
-    <img class="leftPic" src="img/pic_4.jpg" id="card-img-left" alt="...">
+<div class="card  border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+    <img class="lPic" src="img/marsha.gif" id="card-img-left" alt="...">
     <div class="card-body">
         <a href="#" class="lButton btn btn-primary">--></a>
     </div>
 </div>
-<div class="card mx-auto border border-warning border-5 align-items-center bg-dark" style="width: 20rem;">
-    <img class="middlePic" src="img/pic_1.jpg" id="card-img-middle">
+<div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+    <img class="mPic" src="img/dadBrady.gif" id="card-img-middle">
     <div class="card-body">
         <a href="#" class="mButton btn btn-primary"><--  --></a>
     </div>
 </div>
-<div class="card mx-auto border border-warning border-5 align-items-center bg-secondary" style="width: 20rem;">
-    <img class="rightPic" src="img/pic_2.jpg" id="card-img-right" alt="...">
+<div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+    <img class="rPic" src="img/oldestBrady.gif" id="card-img-right" alt="...">
     <div class="card-body">
         <a href="#" class="rButton btn btn-primary"><--</a>
     </div>
 </div>
+    <div class="container row justify-content-center mx-auto align-items-center">
+    <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+        <img class="lPic" src="img/maidBrady.gif" id="card-img-left" alt="...">
+        <div class="card-body">
+<!--            <a href="#" class="lButton btn btn-primary">&ndash;&gt;</a>-->
+        </div>
+    </div>
+    <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+        <img class="mPic" src="img/janBrady.gif" id="card-img-middle">
+        <div class="card-body">
+<!--            <a href="#" class="mButton btn btn-primary"><&#45;&#45;  &ndash;&gt;</a>-->
+        </div>
+    </div>
+    <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+        <img class="rPic" src="img/lilBrady.gif" id="card-img-right" alt="...">
+        <div class="card-body">
+<!--            <a href="#" class="rButton btn btn-primary"><&#45;&#45;</a>-->
+        </div>
+    </div>
+        <div class="container row justify-content-center mx-auto align-items-center">
+        <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+            <img class="lPic" src="img/cindyBrady.gif" id="card-img-left" alt="...">
+            <div class="card-body">
+<!--                <a href="#" class="lButton btn btn-primary">&ndash;&gt;</a>-->
+            </div>
+        </div>
+        <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+            <img class="mPic" src="img/peterBrady.gif" id="card-img-middle">
+            <div class="card-body">
+<!--                <a href="#" class="mButton btn btn-primary"><&#45;&#45;  &ndash;&gt;</a>-->
+            </div>
+        </div>
+        <div class="card border border-primary border-5 align-items-center bg-black" style="width: 20rem;">
+            <img class="rPic" src="img/caroleBrady.gif" id="card-img-right" alt="...">
+            <div class="card-body">
+<!--                <a href="#" class="rButton btn btn-primary"><&#45;&#45;</a>-->
+            </div>
+        </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -121,63 +165,63 @@
 
     $('dd').addClass('invisible');
 
-    $(document).ready(function () {
-        $('#test').click(function (event) {
-            event.preventDefault();
+        $('#test').click(function () {
             $('dd').toggleClass('invisible');
         });
-    });
 
-
-    $(document).ready(function () {
-        $('dt, dd').click(function (event) {
-            event.preventDefault();
+        $('dt, dd').click(function () {
             $(this).toggleClass('highlighted');
         });
-    });
 
-    $(document).ready(function() {
-        $('.firstBtn').click(function(event){
-            event.preventDefault();
+
+        $('.firstBtn').click(function(){
             $('li:last-child').css("background-color", "yellow");
         });
-    });
 
-    $(document).ready(function() {
-        $('h3').click(function(event){
-            event.preventDefault();
+
+        $('h3').click(function(){
             $('h3').next().css("font-weight", "bold");
         });
-    });
 
-    $(document).ready(function() {
-        $('li').click(function(event){
-            event.preventDefault();
+
+        $('li').click(function(){
             $(this).parent().children('li').first().css("color", "blue");
         });
+
+//---------------Picture rotations ---------------//
+    $('.lButton').click(function (e) {
+        e.preventDefault();
+        let firstPic = $('.lButton').parent().parent().children().first().attr('src');
+        let middlePic = $('.mButton').parent().parent().children().first().attr('src');
+        let lastPic = $('.rButton').parent().parent().children().first().attr('src');
+        $(this).parent().parent().children().first().attr('src', middlePic);
+        $(this).parent().parent().next().children().first().attr('src', firstPic);
     });
-// $(document).ready(function (){
-//     $('.lButton').click(function (event){
-//         event.preventDefault();
-//         $('#middlePic').attr("src", "img/pic_4.jpg");
-//         $('#leftPic').attr("src", "img/pic_1.jpg");
-//     })
-// })
+    $('.rButton').click(function (e) {
+        e.preventDefault();
+        let firstPic = $('.lButton').parent().parent().children().first().attr('src');
+        let middlePic = $('.mButton').parent().parent().children().first().attr('src');
+        let lastPic = $('.rButton').parent().parent().children().first().attr('src');
+        $(this).parent().parent().children().first().attr('src', middlePic);
+        $(this).parent().parent().prev().children().first().attr('src', lastPic);
+    });
+    $('.mButton').click(function (e) {
+        e.preventDefault();
+        let firstPic = $('.lButton').parent().parent().children().first().attr('src');
+        let middlePic = $('.mButton').parent().parent().children().first().attr('src');
+        let lastPic = $('.rButton').parent().parent().children().first().attr('src');
+        if (Math.random() > .5) {
+            $(this).parent().parent().children().first().attr('src', firstPic);
+            $(this).parent().parent().prev().children().first().attr('src', middlePic);
+        }
 
-$(document).ready(function (){
-    $('.lButton').click(function (event){
-        event.preventDefault();
-        let newCLass = $(this).attr('class');
-        let oldClass = $('.middlePic').attr('class');
-        $(this).fadeOut(function (){
-            $('.middlePic').removeClass(oldClass).addClass(newCLass).fadeIn('slow');
-        })
-    })
-})
-
-
+        else {
+            $(this).parent().parent().children().first().attr('src', lastPic);
+            $(this).parent().parent().next().children().first().attr('src', middlePic);
+        }
+    });
 </script>
-</body>
 </main>
+</body>
 </html>
 

@@ -1,21 +1,36 @@
-.leftPic {
+.lPic {
     background-image: url("/img/pic_1.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    width: 250px;
+    width: 300px;
 }
 
-.middlePic {
+.mPic {
     background-image: url("/img/pic_2.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    width: 250px;
+    width: 300px;
 }
 
-.rightPic {
+.rPic {
     background-image: url("/img/pic_3.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    width: 250px;
+    width: 300px;
 }
+
+img {
+    float: left;
+    width:  100px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.brady{
+    font-family: 'Alfa Slab One', cursive;
+    color: grey;
+    text-shadow: 2px 2px blue;
+}
+
+
 
