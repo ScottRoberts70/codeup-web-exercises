@@ -175,7 +175,7 @@
 
 
         $('.firstBtn').click(function(){
-            $('li:last-child').css("background-color", "yellow");
+            $('li:last-child').css("background-color", "yellow");  // or $(this).child().last().css("background", "yellow")
         });
 
 
@@ -191,6 +191,8 @@
 //---------------Picture rotations ---------------//
     $('.lButton').click(function (e) {
         e.preventDefault();
+        let audio = new Audio('img/marcia.mp3');
+        audio.play();
         let firstPic = $('.lButton').parent().parent().children().first().attr('src');
         let middlePic = $('.mButton').parent().parent().children().first().attr('src');
         let lastPic = $('.rButton').parent().parent().children().first().attr('src');

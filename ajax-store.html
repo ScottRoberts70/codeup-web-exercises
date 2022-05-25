@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ajaxstyle.css">
+    <script src="https://kit.fontawesome.com/a0d494409f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!----------BOOTSTRAP AS WELL AS FONT AWESOME/GOOGLE FONTS------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Online Store</title>
+</head>
+<br>
+<header>
+    <h1 class="row col-12 mx-auto justify-content-center mt-5 mb-4" style="color: #F0F0F0">My Tool Store</h1>
+</header>
+<body>
+<br>
+<div class="container row mx-auto mt-4">
+<!--    <table class="align-middle mx-auto w-100 " id="products" >-->
+    <table id="products" class="table table-dark table-hover opacity-75 w-50 mx-auto">
+        <thead class="align-middle">
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+</div>
+<br>
+<div class="row col-12 justify-content-center">
+    <button type="button" class="btn1 row w-25 btn rounded btn-secondary">Secondary</button>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        $.get('data/inventory.json').done(function (data) {
+            $("#insertProducts").html("");
+            // console.log(data);
+            data.forEach(function (data) {
+                let titleTh = "<td>" + data.title + "</td>";
+                let qntyTh = "<td>" + data.quantity + "</td>";
+                let priceTh = "<td>" + data.price + "</td>";
+                let categoryTh = "<td>" + data.categories + "</td>"
+                $("#insertProducts").append($('<tr>' + titleTh + qntyTh + priceTh + categoryTh + '</tr>'));
+            });
+        });
+
+        $(".btn1").click(function(e){
+            e.preventDefault();
+            window.location = "http://localhost:63342/codeup-web-exercises/ajax-store.html?_ijt=in54ve9cigjc2b8ga1a7q77e8u";
+        });
+    })();
+</script>
+
+</body>
+</html>

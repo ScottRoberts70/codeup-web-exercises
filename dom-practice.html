@@ -63,15 +63,13 @@
     <button id="submitString">Add</button>
     <p id="madLib">Hello</p>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
-    "use strict";
 
     let colorChoice = prompt("please enter a color");
     let div1 = document.getElementsByClassName("question")[0];
    div1.style.color = colorChoice;
-
-
 
    //change body color//
     document.getElementById("changeColor").addEventListener
@@ -79,7 +77,6 @@
         let bColor =  document.getElementById("color").value
         document.body.style.backgroundColor = bColor;
     });
-
 
     let todoInput = document.getElementById("todo");
     let todoList = document.getElementById("todosList");
@@ -93,7 +90,7 @@
         }
     });
 
-    / Vanilla JS
+    // / Vanilla JS
     // const toggleBtn = document.getElementById("toggleH1");
     //
     // function toggleFontSize() {
@@ -145,12 +142,10 @@
             intervalId = null;
         }
     });
+
+    $('.question:nth-child(6)').mouseenter(function(){  //can use :nth-or-type(5)
+        alert("CONGRATULATIONS ON YOUR NEW CRUISE!")
+    });
 </script>
 </body>
 </html>
-
-
-
-
-
-
