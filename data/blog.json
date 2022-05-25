@@ -1,0 +1,26 @@
+[
+  {
+    "title": "My First Blog Post",
+    "content": "    My first day of Codeup. I already feel lost in the sauce!.  I wonder what it will be ike in a month?  I will have to ensure to study harder. I hope it gets better. We are starting with Javascript... I have been studying HTML and CSS, so...  Anyways I will keep everyone posted.",
+    "categories": [
+      "codeup"
+    ],
+    "date": "April 12, 2022"
+  },
+  {
+    "title": "The Second Post",
+    "content": "     Having troubles with Loops, Arrays, and Objects. I had to re-take the assessment. It doesnt make me feel better about the situation but the more I code the better I feel. I am jsut not as sharp or fast as the young men and women in this class. The thing that surprises me is how the young students are mroe than happy to help. It gives me faith in the next generation.",
+    "categories": [
+      "Codeup"
+    ],
+    "date": "May 24, 2022"
+  },
+  {
+    "title": "The Third Post",
+    "content": "    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "categories": [
+      "Codeup"
+    ],
+    "date": "May 24, 2022"
+  }
+]

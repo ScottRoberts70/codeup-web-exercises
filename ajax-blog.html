@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/ajaxBlog.css">
+    <script src="https://kit.fontawesome.com/a0d494409f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!----------BOOTSTRAP AS WELL AS FONT AWESOME/GOOGLE FONTS------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>My Blog Site</title>
+</head>
+<body>
+<header>
+    <div>
+        <h1 class="row col-12 mx-auto justify-content-center mb-5 mt-5">Welcome to my Blog!</h1>
+    </div>
+</header>
+<div class=" col-12 mx-auto">
+    <div id="post" class="container row col-6 mx-auto">
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        $.get('data/blog.json').done(function (data) {
+            $("#post").html(data);
+            data.forEach(function (data) {
+                let rawTitle = "<h3>" + data.title + "</h3>";
+                let rawDate = "<h4>" + data.date + "</h4>";
+                let rawCategories = "<h5>" + data.categories + "</h5>";
+                let rawContent = "<p>" + data.content + "</p>"
+                $("#post").append($('<div>' + rawTitle +  rawDate + '<br>' + rawCategories + '<br>'+ rawContent + '</div>'));
+            });
+        });
+    })();
+</script>
+</body>
+</html>

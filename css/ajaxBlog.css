@@ -1,0 +1,21 @@
+body {
+    background-image: url("/img/ajzxbackground.jpg");
+    background-size: cover;
+}
+
+#post {
+    color: #FFFFFF;
+}
+
+header h1{
+    color: #FFFFFF;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 4px 4px grey;
+    font-size: 5em;
+}
+
+p{
+    color: black;
+    background: #FFFFFF;
+    border: black solid .5em;
+}
