@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's A Map! - An Lecture</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
+<h1 id="place"></h1>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/geocode-utils.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    const MAP = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4946, 29.4252], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+    // let mainCoords = [
+    //     [-98.4691, 29.603415],
+    //     [-98.49776, 29.610259],
+    //     [-98.5137, 29.6094]
+    // ]
+    // function mapping() {
+    //     let mappings = [];
+    //     mainCoords.forEach(mapping);
+    //     mappings.push(
+    //         new mapboxgl.Marker()
+    //             .setLngLat(mainCoords)
+    //             .addTo(MAP));
+    //     return mappings;
+    // }
+    // let markers = mapping();
+
+
+    // function mapping() {
+    //     let mappings = [];
+    //     let mainCoords= [
+    //             [-98.4691, 29.603415],
+    //             [-98.49776, 29.610259],
+    //             [-98.5137, 29.6094]
+    // ]
+    //         for (let i = 0; i < mainCoords.length; i++) {
+    //         mappings.push(
+    //             new mapboxgl.Marker()
+    //                 .setLngLat(mainCoords[i])
+    //                 .addTo(MAP)
+    //         );
+    //     }
+    //     return mappings;
+    // }
+    //
+    // let markers = mapping();
+
+
+    // FIRST RESTRAINT --------------------------//
+    const MARKER = new mapboxgl.Marker()
+        .setLngLat([-98.4691, 29.603415])
+        .addTo(MAP);
+
+    const CHUYS_POPUP = new mapboxgl.Popup()
+        .setHTML("<h3>Chuy's</h3>" + "<p>Great Mexican and TexMex food!</p>")
+    MARKER.setPopup(CHUYS_POPUP);
+
+    // SECOND RESTAURANT ------------------------//
+    const MARKER2= new mapboxgl.Marker()
+        .setLngLat([-98.5137, 29.6094])
+        .addTo(MAP);
+
+    const JPRIME_POPUP = new mapboxgl.Popup()
+        .setHTML("<h3>CJ Prime Steakhouse</h3>" + "<p>Best steak in town!</p>")
+    MARKER2.setPopup(JPRIME_POPUP);
+
+    // THIRD RESTRAINT --------------------//
+    const MARKER3= new mapboxgl.Marker()
+        .setLngLat([-98.49776, 29.610259])
+        .addTo(MAP);
+
+    const CHAMA_POPUP = new mapboxgl.Popup()
+        .setHTML("<h3>Chama Gaucha Brazilian Steakhouse</h3>" + "<p>Where the emats at!</p>")
+    MARKER3.setPopup(CHAMA_POPUP);
+
+</script>
+
+

@@ -1,0 +1,1 @@
+const MAPBOX_API_KEY = "pk.eyJ1Ijoicng0cGFpbiIsImEiOiJjbDNseWE0YzQwNzJjM2NwYnZrZmQyMmtwIn0.uHzQihZjidz0yaKGJE6vaA"
