@@ -1,89 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>It's A Map! - An Lecture</title>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <meta charset="utf-8">
+    <title>Toggle interactions</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="js/keys.js"></script>
+    <script src="js/geocode-utils.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
-<h1 id="place"></h1>
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
-<script src="js/keys.js"></script>
-<script src="js/geocode-utils.js"></script>
-<script>
-    mapboxgl.accessToken = MAPBOX_API_KEY;
-    const MAP = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-98.4946, 29.4252], // starting position [lng, lat]
-        zoom: 9 // starting zoom
-    });
+<div class="container">
+    <style>
+        .listing-group {
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+            border-radius: 3px;
+            max-width: 20%;
+            color: #fff;
+        }
 
-    // let mainCoords = [
-    //     [-98.4691, 29.603415],
-    //     [-98.49776, 29.610259],
-    //     [-98.5137, 29.6094]
-    // ]
-    // function mapping() {
-    //     let mappings = [];
-    //     mainCoords.forEach(mapping);
-    //     mappings.push(
-    //         new mapboxgl.Marker()
-    //             .setLngLat(mainCoords)
-    //             .addTo(MAP));
-    //     return mappings;
-    // }
-    // let markers = mapping();
+        .listing-group input[type='checkbox']:first-child + label {
+            border-radius: 3px 3px 0 0;
+        }
 
+        .listing-group label:last-child {
+            border-radius: 0 0 3px 3px;
+            border: none;
+        }
 
-    // function mapping() {
-    //     let mappings = [];
-    //     let mainCoords= [
-    //             [-98.4691, 29.603415],
-    //             [-98.49776, 29.610259],
-    //             [-98.5137, 29.6094]
-    // ]
-    //         for (let i = 0; i < mainCoords.length; i++) {
-    //         mappings.push(
-    //             new mapboxgl.Marker()
-    //                 .setLngLat(mainCoords[i])
-    //                 .addTo(MAP)
-    //         );
-    //     }
-    //     return mappings;
-    // }
-    //
-    // let markers = mapping();
+        .listing-group input[type='checkbox'] {
+            display: none;
+        }
 
+        .listing-group input[type='checkbox'] + label {
+            background-color: #3386c0;
+            display: block;
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        }
 
-    // FIRST RESTRAINT --------------------------//
-    const MARKER = new mapboxgl.Marker()
-        .setLngLat([-98.4691, 29.603415])
-        .addTo(MAP);
+        .listing-group input[type='checkbox'] + label {
+            background-color: #3386c0;
+            text-transform: capitalize;
+        }
 
-    const CHUYS_POPUP = new mapboxgl.Popup()
-        .setHTML("<h3>Chuy's</h3>" + "<p>Great Mexican and TexMex food!</p>")
-    MARKER.setPopup(CHUYS_POPUP);
+        .listing-group input[type='checkbox'] + label:hover,
+        .listing-group input[type='checkbox']:checked + label {
+            background-color: #4ea0da;
+        }
 
-    // SECOND RESTAURANT ------------------------//
-    const MARKER2= new mapboxgl.Marker()
-        .setLngLat([-98.5137, 29.6094])
-        .addTo(MAP);
-
-    const JPRIME_POPUP = new mapboxgl.Popup()
-        .setHTML("<h3>CJ Prime Steakhouse</h3>" + "<p>Best steak in town!</p>")
-    MARKER2.setPopup(JPRIME_POPUP);
-
-    // THIRD RESTRAINT --------------------//
-    const MARKER3= new mapboxgl.Marker()
-        .setLngLat([-98.49776, 29.610259])
-        .addTo(MAP);
-
-    const CHAMA_POPUP = new mapboxgl.Popup()
-        .setHTML("<h3>Chama Gaucha Brazilian Steakhouse</h3>" + "<p>Where the emats at!</p>")
-    MARKER3.setPopup(CHAMA_POPUP);
-
-</script>
+        .listing-group input[type='checkbox']:checked + label:before {
+            content: '✔';
+            margin-right: 5px;
+        }
+    </style>
+    <div id="map"></div>
+    <nav id="listing-group" class="listing-group">
+        <input type="checkbox" id="scrollZoom" checked="checked">
+        <label for="scrollZoom">Scroll zoom</label>
+        <input type="checkbox" id="boxZoom" checked="checked">
+        <label for="boxZoom">Box zoom</label>
+        <input type="checkbox" id="dragRotate" checked="checked">
+        <label for="dragRotate">Drag rotate</label>
+        <input type="checkbox" id="dragPan" checked="checked">
+        <label for="dragPan">Drag pan</label>
+        <input type="checkbox" id="keyboard" checked="checked">
+        <label for="keyboard">Keyboard</label>
+        <input type="checkbox" id="doubleClickZoom" checked="checked">
+        <label for="doubleClickZoom">Double click zoom</label>
+        <input type="checkbox" id="touchZoomRotate" checked="checked">
+        <label for="touchZoomRotate">Touch zoom rotate</label>
+    </nav>
 
 
+    <script>
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+
+        const MAP = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-98.4946, 29.4252], // starting position [lng, lat]
+            zoom: 9, // starting zoom
+        });
+
+        let places = [
+            {
+                name: "Chuys",
+                coordinates: [-98.4691, 29.603415]
+            },
+            {
+                name: "J-Prime Steakhouse",
+                coordinates: [-98.5137, 29.6094]
+
+            },
+            {
+                name: "Chama Gaucha Brazilian Steakhouse",
+                coordinates: [-98.49776, 29.610259]
+
+            }
+        ]
+
+        places.forEach(function (place) {
+            let marker = new mapboxgl.Marker({
+                color: "green",
+                draggable: false
+            }).setLngLat(place.coordinates)
+                .addTo(MAP);
+
+            let popup = new mapboxgl.Popup()
+                .setHTML(place.name)
+            marker.setPopup(popup)
+                .addTo(MAP);
+
+        })
+        document.getElementById('listing-group').addEventListener('change', (e) => {
+            const handler = e.target.id;
+            if (e.target.checked) {
+                map[handler].enable();
+            } else {
+                map[handler].disable();
+            }
+
+        });
+
+
+    </script>
+</div>
+</body>
+</html>
