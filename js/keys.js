@@ -1,2 +1,2 @@
 const MAPBOX_API_KEY = "pk.eyJ1Ijoicng0cGFpbiIsImEiOiJjbDNseWE0YzQwNzJjM2NwYnZrZmQyMmtwIn0.uHzQihZjidz0yaKGJE6vaA"
-const OPEN_WEATHER_APPID = "cb88ce2271c96548dedaaadc48cd09aa"
+const OPEN_WEATHER_KEY = "cb88ce2271c96548dedaaadc48cd09aa"
