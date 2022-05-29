@@ -14,7 +14,6 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 //------- Set interval function to set time and date info according to web browser and refresh every second. Not getting it from Openweather.------>
 
-
 setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
@@ -22,14 +21,13 @@ setInterval(() => {
     const day = time.getDay();
     const hour = time.getHours();
 
-
-        ////set to 12 hr using modulus----//
-        const hoursIn12hrFormat = hour >= 13 ? hour % 12 : hour
-        const minutes = time.getMinutes() < 10 ? '0' : '' + time.getMinutes();
-        const ampm = hour >= 12 ? 'PM' : 'AM'
+    ////set to 12 hr using modulus-also allowed zero in the minutes//
+    const hoursIn12hrFormat = hour >= 13 ? hour % 12 : hour
+    const minutes = time.getMinutes() < 10 ? '0' : '' + time.getMinutes();
+    const ampm = hour >= 12 ? 'PM' : 'AM'
 
     //---------concatenate our data adn return to HTML----//
-    timeEl.innerHTML = hoursIn12hrFormat + ':' +minutes+`  <span id="am-pm">${ampm}</span>`
+    timeEl.innerHTML = hoursIn12hrFormat + ':' + minutes + `  <span id="am-pm">${ampm}</span>`
     dateEl.innerHTML = days[day] + ', ' + date + ' ' + months[month]
 }, 1000);
 
@@ -80,16 +78,16 @@ function showWeatherData(data) {
 
     let otherDayForecast = ''
 
-    data.daily.forEach((day, idx)=>{
-        if (idx == 0){
+    data.daily.forEach((day, idx) => {
+        if (idx == 0) {
             currentTempEl.innerHTML = `
-            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png" alt="weather icon" class="w-icon">
+            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
             <div class="other">
                 <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
                 <div class="temp">Day - ${day.temp.day}&#176; F</div>
                 <div class="temp">Night - ${day.temp.night}&#176; F</div>
             </div>`
-        }else{
+        } else {
             otherDayForecast += `
              <div class="weather-forecast-item">
                 <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
@@ -110,13 +108,14 @@ function showWeatherData(data) {
         zoom: 10
         // starting zoom
     });
+    
 
     const MARKER = new mapboxgl.Marker()
         .setLngLat([-98.4691, 29.603415])
         .setDraggable(true)
         .addTo(MAP);
 
-    reverseGeocode({lat: -98.4691, lng: 29.603415}, MAPBOX_API_KEY).then(function(location) {
+    reverseGeocode({lat: -98.4691, lng: 29.603415}, MAPBOX_API_KEY).then(function (location) {
         console.log(location);
     });
 
@@ -124,13 +123,12 @@ function showWeatherData(data) {
 
     MARKER.on("dragend", function () {
         LONG_LAT = MARKER.getLngLat();
-        // document.getElementById("place").innerHTML = LONG_LAT.lng + ", " + LONG_LAT.lat;
+        document.getElementById("place").innerHTML = LONG_LAT.lng + ", " + LONG_LAT.lat;
         MAP.flyTo({center: [LONG_LAT.lng, LONG_LAT.lat]});
         reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
             document.getElementById("place").innerHTML = data;
-        })
-    })
-
+        });
+    });
 }
 
 

@@ -8,11 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link rel="stylesheet" href="css/weather-styles.css">
 </head>
 <body>
-
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <!----------MAIN CONTAINER--------->
 <div class="container row w-100">
     <h3 id="place">       Move Map Marker!  </h3>
@@ -31,7 +33,7 @@
             <div class="others" id="current-weather-items">
             </div>
         </div>
-        <div id='map' class="text-start" style='width: 60vw; height: 55vh; margin: auto'></div>
+        <div id='map' style='width: 55vw; height: 55vh; margin: auto'></div>
     </div>
     <br>
 
