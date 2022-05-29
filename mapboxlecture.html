@@ -7,7 +7,6 @@
 </head>
 <body>
 <div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
-<h1 id="place"></h1>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script src="js/geocode-utils.js"></script>
@@ -35,7 +34,7 @@
     //         .addTo(MAP);
     // });
 
-    reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then(function(location) {
+    reverseGeocode({lat: -98.4691, lng: 29.603415}, MAPBOX_API_KEY).then(function(location) {
         console.log(location);
     });
 
