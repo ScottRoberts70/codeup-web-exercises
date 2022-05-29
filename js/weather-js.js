@@ -22,13 +22,14 @@ setInterval(() => {
     const day = time.getDay();
     const hour = time.getHours();
 
-    ////set to 12 hr using modulus----//
-    const hoursIn12hrFormat = hour >= 13 ? hour % 12 : hour
-    const minutes = time.getMinutes();
-    const ampm = hour >= 12 ? 'PM' : 'AM'
+
+        ////set to 12 hr using modulus----//
+        const hoursIn12hrFormat = hour >= 13 ? hour % 12 : hour
+        const minutes = time.getMinutes() < 10 ? '0' : '' + time.getMinutes();
+        const ampm = hour >= 12 ? 'PM' : 'AM'
 
     //---------concatenate our data adn return to HTML----//
-    timeEl.innerHTML = hoursIn12hrFormat + ':' + minutes + `<span id="am-pm">${ampm}</span>`
+    timeEl.innerHTML = hoursIn12hrFormat + ':' +minutes+`  <span id="am-pm">${ampm}</span>`
     dateEl.innerHTML = days[day] + ', ' + date + ' ' + months[month]
 }, 1000);
 

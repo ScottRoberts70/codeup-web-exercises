@@ -25,6 +25,7 @@ body{
 }
 
 .date-container .time{
+    text-align: start;
     font-size: 65px;
     font-weight: 100;
 }
