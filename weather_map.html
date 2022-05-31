@@ -14,14 +14,16 @@
     <link rel="stylesheet" href="css/weather-styles.css">
 </head>
 <body>
+
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<link rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css">
+
 <!----------MAIN CONTAINER--------->
-<div class="container row w-100">
-    <h3 id="place">       Move Map Marker!  </h3>
-</div>
 <div class="container">
     <div class="current-info">
+
         <!--------date container------>
         <div class="date-container">
             <div><h1>My Weather App</h1></div>
@@ -31,60 +33,76 @@
             <div class="date" id="date">
                 Monday, 24 May
             </div>
+            <br>
+
+            <!-----------CURRENT/TODAY'S WEATHER------------>
             <div class="others" id="current-weather-items">
             </div>
+
+            <!----------MAPS from MAPBOX with radio buttons-------------------->
+            <div id="menu">
+                <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+
+                <!-- See a list of Mapbox-hosted public styles at -->
+                <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+                <label for="satellite-v9">satellite</label>
+                <input id="light-v10" type="radio" name="rtoggle" value="light">
+                <label for="light-v10">light</label>
+                <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+                <label for="dark-v10">dark</label>
+                <input id="streets-v11" type="radio" name="rtoggle" value="streets">
+                <label for="streets-v11">streets</label>
+<!--                <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">-->
+<!--                <label for="outdoors-v11">outdoors</label>-->
+            </div>
         </div>
-        <div id='map' style='width: 60vw; height: 55vh; margin: auto'></div>
+
+        <!-------------Current Map height an width--------------->
+        <div id='map' style='width: 60vw; height: 65vh; margin: auto'></div>
     </div>
     <br>
 
-<!--    <div class="row col-12 place-container w-100">-->
-
-<!--&lt;!&ndash;                    <div class="time-zone" id="time-zone">San Antonio, TX</div>&ndash;&gt;-->
-<!--        &lt;!&ndash;            <div class="country" id="country">USA</div>&ndash;&gt;-->
-<!--    </div>-->
-    <!---------FORECAST CARD-------------->
+    <!--------- FUTURE FORECAST AT BOTTOM -------------->
     <div class="future-forecast">
         <div class="today" id="current-temp">
             <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="weather icon" class="w-icon">
             <div class="other">
-                <div class="day">Monday</div>
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
+                <div class="day">Current</div>
+                <div class="temp">High - 98.6&#176; F</div>
+                <div class="temp">Low - 76.2&#176; F</div>
             </div>
         </div>
-
         <div class="weather-forecast" id="weather-forecast">
             <div class="weather-forecast-item">
                 <div class="day">Tue</div>
                 <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
+                <div class="temp">High - 98.6&#176; F</div>
+                <div class="temp">Low - 76.2&#176; F</div>
             </div>
-            <div class="weather-forecast-item">
-                <div class="day">Wed</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Thur</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Fri</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Sat</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Day - 98.6&#176; F</div>
-                <div class="temp">Night - 76.2&#176; F</div>
-            </div>
+<!--            <div class="weather-forecast-item">-->
+<!--                <div class="day">Wed</div>-->
+<!--                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
+<!--                <div class="temp">High - 98.6&#176; F</div>-->
+<!--                <div class="temp">Low - 76.2&#176; F</div>-->
+<!--            </div>-->
+<!--            <div class="weather-forecast-item">-->
+<!--                <div class="day">Thur</div>-->
+<!--                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
+<!--                <div class="temp">High - 98.6&#176; F</div>-->
+<!--                <div class="temp">Low - 76.2&#176; F</div>-->
+<!--            </div>-->
+<!--            <div class="weather-forecast-item">-->
+<!--                <div class="day">Fri</div>-->
+<!--                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
+<!--                <div class="temp">High - 98.6&#176; F</div>-->
+<!--                <div class="temp">Low - 76.2&#176; F</div>-->
+<!--            </div>-->
+<!--            <div class="weather-forecast-item">-->
+<!--                <div class="day">Sat</div>-->
+<!--                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">-->
+<!--                <div class="temp">High - 98.6&#176; F</div>-->
+<!--                <div class="temp">Low - 76.2&#176; F</div>-->
+<!--            </div>-->
         </div>
     </div>
 </div>

@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
 }
+#menu {
+    border: 1px solid #eee;
+    background: rgba(6,2,2,0.5);
+    color: white;
+    padding: 5px;
+}
+
 
 body{
     background:url("/img/sunnyB.jpg");
@@ -13,17 +20,17 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-h3{
+h1{
+    font-size: 40px;
     font-weight: bolder;
-    font-size: large;
+    text-shadow: 4px 4px black;
 }
 
 canvas{
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
     background: rgba(6,2,2,0.2);
 }
-
 
 .container{
     padding: 10px 70px;
@@ -39,23 +46,21 @@ canvas{
 .date-container .time{
     font-size: 65px;
     font-weight: 100;
+    text-shadow: 4px 4px black;
 }
 
 .date-container #am-pm{
    font-size: 30px;
     margin-left: 30px;
+    text-shadow: 4px 4px black;
 }
 
 .date-container .date{
     font-size: 30px;
+    text-shadow: 4px 4px black;
 }
 
-/*.place-container{*/
-/*    text-align: center;*/
-/*    height: 30px;*/
-/*}*/
-
-#place{
+#place {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,29 +76,29 @@ canvas{
 .current-info .others{
     display: flex;
     flex-direction: column;
-    background: rgba(24,24,27, 0.8);
+    background: rgba(24,24,27, 0.5);
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
     border: 1px solid #eee;
 }
 
-.current-info .others .weather-item{
+.current-info .others .weather-item {
     display: flex;
     justify-content: space-between;
 }
 
-.future-forecast{
-    background: rgba(24,24,27, 0.8);
+.future-forecast {
+    background: rgba(24,24,27, 0.5);
     padding: 10px;
     position: fixed;
     bottom: 0;
     display: flex;
     color: white;
-    width: 93%;
+    width: 90%;
     align-items: center;
     justify-content: center;
-    height: 15em;
+    height: 16em;
 }
 
 .future-forecast .today{
@@ -147,15 +152,12 @@ canvas{
 @media only screen and (max-width: 730px){
 
     .future-forecast{
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         overflow-x: scroll;
     }
 
     #place{
-        display: none;
-    }
-    #map{
         display: none;
     }
 
@@ -175,7 +177,7 @@ canvas{
 
     .date-container{
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
     }
 
     .date-container .time{
@@ -200,14 +202,20 @@ canvas{
     }
 
     .current-info .others{
-        padding: 12px;
+        padding: 18px;
     }
 
+    #menu {
+        display: none;
+    }
 
     .current-info .others .weather-item{
-        font-size: 12px;
+        font-size: 18px;
     }
+
 }
+
+
 
 @media only screen and (max-width: 1000px){
 
@@ -216,8 +224,7 @@ canvas{
         align-items: start;
         overflow-x: scroll;
     }
-
-    canvas{
+    #map{
         display: none;
     }
 }
