@@ -78,7 +78,6 @@ function showWeatherData(data) {
                     <div>${uvi}</div>
                 </div>`;
 
-
     //-----BUCKET-------//
     let otherDayForecast = ''
 
@@ -92,6 +91,7 @@ function showWeatherData(data) {
                 <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
                 <div class="temp">High - ${day.temp.max}&#176; F</div>
                 <div class="temp">Low - ${day.temp.min}&#176; F</div>
+                <div class="rain">Chance of Rain ${day.rain} %</div>
             </div>`
         } else {
 
