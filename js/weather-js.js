@@ -31,7 +31,7 @@ setInterval(() => {
     dateEl.innerHTML = days[day] + ', ' + date + ' ' + months[month]
 }, 1000);
 
-//call geolocation based on Nav, may change this to map location on final version//
+//TODO call geolocation based on Nav, may change this to map location on final version//
 getWeatherData();
 
 function getWeatherData() {
@@ -103,12 +103,12 @@ function showWeatherData(data) {
     mapboxgl.accessToken = MAPBOX_API_KEY;
     const MAP = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        style: 'mapbox://styles/mapbox/dark-v10', // style URL
         center: [-98.4691, 29.603415], // starting position [lng, lat]
         zoom: 10
         // starting zoom
     });
-    
+    ////Maybe add a button to toggle between light and dark mode?//
 
     const MARKER = new mapboxgl.Marker()
         .setLngLat([-98.4691, 29.603415])
