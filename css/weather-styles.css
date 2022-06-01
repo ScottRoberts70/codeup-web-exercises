@@ -3,13 +3,13 @@
     margin: 0;
     padding: 0;
 }
+
 #menu {
     border: 1px solid #eee;
     background: rgba(6,2,2,0.5);
     color: white;
     padding: 5px;
 }
-
 
 body{
     background:url("/img/sunnyB.jpg");
@@ -18,6 +18,12 @@ body{
     overflow: hidden;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+}
+
+.today {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 h1{
@@ -68,7 +74,7 @@ canvas{
     margin: 0 10px;
     border: 1px solid #eee;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: rgba(6,2,2,0.2);
 
 }
@@ -78,7 +84,7 @@ canvas{
     flex-direction: column;
     background: rgba(24,24,27, 0.5);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px 0;
     border: 1px solid #eee;
 }
@@ -89,7 +95,7 @@ canvas{
 }
 
 .future-forecast {
-    background: rgba(24,24,27, 0.5);
+    background: rgba(6,2,2,0.4);
     padding: 10px;
     position: fixed;
     bottom: 0;
@@ -134,7 +140,7 @@ canvas{
     border: 1px solid #eee;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(6,2,2,0.2);
+    background: rgba(6,2,2,0.5);
     height: 13em;
 }
 
@@ -172,7 +178,7 @@ canvas{
     }
 
     .future-forecast .today .temp{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .date-container{
@@ -213,7 +219,7 @@ canvas{
         font-size: 18px;
     }
 .weather-forecast-item{
-    font-size: 14px;
+    font-size: 16px;
 }
 }
 
@@ -226,7 +232,7 @@ canvas{
         align-items: start;
         overflow-x: scroll;
     }
-    #map{
+    #map {
         display: none;
     }
 }

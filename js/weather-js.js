@@ -57,7 +57,7 @@ function showWeatherData(data) {
     //-----USED LITERALLY TO PLACE HTML IN JS AND RETURN THE DATA TO HTML FORMAT//
     currentWeatherItemsEl.innerHTML = `<div class="weather-item">
                     <div>Feels Like</div>
-                    <div>${feels_like}&#176;</div>
+                    <div>${feels_like.toFixed(1)}&#176;</div>
                 </div>
                 <div class="weather-item">
                     <div>Humidity</div>
@@ -82,16 +82,15 @@ function showWeatherData(data) {
     let otherDayForecast = ''
 
     data.daily.forEach((day, idx) => {
-        if (idx == 0) {
+        if (idx === 0) {
 
             //SETS THE INFORMATION FROM THE API FOR CURRENT INFO//
             currentTempEl.innerHTML = `
             <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
             <div class="other">
-                <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
-                <div class="temp">High - ${day.temp.max}&#176; F</div>
-                <div class="temp">Low - ${day.temp.min}&#176; F</div>
-                <div class="rain">Chance of Rain ${day.rain} %</div>
+                <div class="today">Today:</div>
+                <div class="temp">High - ${day.temp.max.toFixed(1)}&#176; F</div>
+                <div class="temp">Low - ${day.temp.min.toFixed(1)}&#176; F</div>
             </div>`
         } else {
 
@@ -100,8 +99,8 @@ function showWeatherData(data) {
              <div class="weather-forecast-item">
                 <div class="day">${window.moment(day.dt * 1000).format('ddd')}</div>
                 <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">High - ${day.temp.max}&#176; F</div>
-                <div class="temp">Low - ${day.temp.min}&#176; F</div>
+                <div class="temp">High - ${day.temp.max.toFixed(1)}&#176; F</div>
+                <div class="temp">Low - ${day.temp.min.toFixed(1)}&#176; F</div>
             </div> `
         }
     })
@@ -114,7 +113,7 @@ function showWeatherData(data) {
 mapboxgl.accessToken = MAPBOX_API_KEY;
 const MAP = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+    style: 'mapbox://styles/mapbox/dark-v10', // style URL
     center: [-98.4691, 29.603415], // starting position [lng, lat]
     zoom: 13 // starting zoom
 });
@@ -131,6 +130,7 @@ for (const input of inputs) {
     }
 }
 
+
 //-----SETS GEO LOCATOR FOR THE SEARCH BOX-----//
 const geocoder = new MapboxGeocoder({
     accessToken: MAPBOX_API_KEY,
@@ -143,24 +143,6 @@ MAP.addControl(geocoder)
 geocoder.on('result', function (data) {
     getWeatherData(data.result.center[1], data.result.center[0])
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
