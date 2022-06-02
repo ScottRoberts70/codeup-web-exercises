@@ -54,7 +54,7 @@ function showWeatherData(data) {
     let {feels_like, humidity, sunrise, sunset, uvi} = data.current;
     console.log(data);
 
-    //-----USED LITERALLY TO PLACE HTML IN JS AND RETURN THE DATA TO HTML FORMAT//
+    //-----USED TEMPLATE STRING TO PLACE HTML IN JS AND RETURN THE DATA TO HTML FORMAT//
     currentWeatherItemsEl.innerHTML = `<div class="weather-item">
                     <div>Feels Like</div>
                     <div>${feels_like.toFixed(1)}&#176;</div>
@@ -65,8 +65,8 @@ function showWeatherData(data) {
                 </div>
                 <div class="weather-item">
                     <div>Sun Rise</div>
-                 
-                    <!--Needed to use the .moment cdn --->
+                
+                    <!--Needed to use the .moment cdn   https://momentjs.com/--->
                     <div>${window.moment(sunrise * 1000).format('h:mm a')}</div>
                 </div>
                 <div class="weather-item">
@@ -80,11 +80,12 @@ function showWeatherData(data) {
 
     //-----BUCKET-------//
     let otherDayForecast = ''
+    // idx is a utility function for traversing properties on objects and arrays. If an intermediate property is either null or undefined, it is instead returned. The purpose of this function is to simplify extracting properties from a chain of maybe-typed properties.
 
     data.daily.forEach((day, idx) => {
         if (idx === 0) {
 
-            //SETS THE INFORMATION FROM THE API FOR CURRENT INFO//
+            //SETS THE INFORMATION FROM THE API FOR CURRENT INFO. USED A TEMPLATE STRING AND .toFixed DECIMAL POINT//
             currentTempEl.innerHTML = `
             <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
             <div class="other">
@@ -131,7 +132,7 @@ for (const input of inputs) {
 }
 
 
-//-----SETS GEO LOCATOR FOR THE SEARCH BOX-----//
+//-----SETS GEO LOCATOR FOR THE SEARCH BOX----Form MAPBOX EXAMPLE-//
 const geocoder = new MapboxGeocoder({
     accessToken: MAPBOX_API_KEY,
     mapboxgl: mapboxgl
@@ -139,7 +140,7 @@ const geocoder = new MapboxGeocoder({
 
 MAP.addControl(geocoder)
 
-//-----USES SEARCH FIELD RESULTS TO RECENTER LOCATION & GATHERS RESULT/DATA----//
+//-----USES SEARCH FIELD RESULTS TO RECENTER LOCATION & GATHERS RESULT/DATA---Dalton HELP!-//
 geocoder.on('result', function (data) {
     getWeatherData(data.result.center[1], data.result.center[0])
 });
