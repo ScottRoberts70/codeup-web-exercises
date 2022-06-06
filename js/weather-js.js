@@ -46,7 +46,6 @@ function getWeatherData(latitude, longitude) {
             showWeatherData(data);
         })
     })
-
 }
 
 //----THE INFO I REQUESTED FROM THE API CALL------//
