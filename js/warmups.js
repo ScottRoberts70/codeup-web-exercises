@@ -158,41 +158,41 @@
 // BONUS (if time permits)
 //
 // Create a function, returnAllProductsEssentialDetails, that takes in an array of product objects and returns an array of product objects containing only the essential details of the product name and price in cents.
-
-
-const hamsters = [
-    {
-        name: "Hamtaro",
-        heightInMM: 86,
-        fur: ['orange', 'white'],
-        gender: "male",
-        dateOfBirth: "August 6"
-    } , {
-        name: "Bijou",
-        heightInMM: 75,
-        fur: ['white'],
-        gender: "female",
-        dateOfBirth: "July 10"
-    } , {
-        name: "Oxnard",
-        heightInMM: 100,
-        fur: ['grey', 'white'],
-        gender: "male",
-        dateOfBirth: "May 3"
-    } , {
-        name: "Boss",
-        heightInMM: 120,
-        fur: ['brown', 'white'],
-        gender: "male",
-        dateOfBirth: "Spetember 21"
-    } , {
-        name: "Snoozer",
-        heightInMM: 85,
-        fur: ['brown', 'white', "pink"],
-        gender: "male",
-        dateOfBirth: "January 14"
-    }
-];
+//
+//
+// const hamsters = [
+//     {
+//         name: "Hamtaro",
+//         heightInMM: 86,
+//         fur: ['orange', 'white'],
+//         gender: "male",
+//         dateOfBirth: "August 6"
+//     } , {
+//         name: "Bijou",
+//         heightInMM: 75,
+//         fur: ['white'],
+//         gender: "female",
+//         dateOfBirth: "July 10"
+//     } , {
+//         name: "Oxnard",
+//         heightInMM: 100,
+//         fur: ['grey', 'white'],
+//         gender: "male",
+//         dateOfBirth: "May 3"
+//     } , {
+//         name: "Boss",
+//         heightInMM: 120,
+//         fur: ['brown', 'white'],
+//         gender: "male",
+//         dateOfBirth: "Spetember 21"
+//     } , {
+//         name: "Snoozer",
+//         heightInMM: 85,
+//         fur: ['brown', 'white', "pink"],
+//         gender: "male",
+//         dateOfBirth: "January 14"
+//     }
+// ];
 
 //--Loops through array and returns obj with tallest height--// //can use to return the highest or lowest of an objet array also--//
 
@@ -250,7 +250,6 @@ const hamsters = [
 //     console.log(makeAnObjectFromString("Kacey Bobby"));
 
 
-
-
+fetch("https://quotes.rest/qod").then(res => res.json()).then(data => console.log(data))
 
 
